@@ -1,0 +1,43 @@
+.disc {
+    border: solid;
+    border-radius: 20px;
+}
+
+#d1 {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+#d2 {
+    background-color: purple;
+    width: 200px;
+    height: 100px;
+}
+
+#d3 {
+    background-color: green;
+    width: 300px;
+    height: 100px;
+}
+
+#d4 {
+    background-color: red;
+    width: 400px;
+    height: 100px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column-reverse;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: black;
+    height: 500px;
+    width: 30px;
+}
+
+#postContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
