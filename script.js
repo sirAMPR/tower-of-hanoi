@@ -1,20 +1,39 @@
-// const post1 = document.body.querySelector("#post1")
-// const pt2 = document.body.querySelector("#post2")
-// const psot2 = document.body.querySelector("#post2")
+let source, destination
+let sourceWidth = 0, destinationWidth = 0
+let modeSourceSelect = true
 
-post1.addEventListener('click', selectSource)
-post2.addEventListener('click', selectSource)
-post3.addEventListener('click', selectSource)
+post1.addEventListener('click', selectTower)
+post2.addEventListener('click', selectTower)
+post3.addEventListener('click', selectTower)
 
-function selectSource(event) {
-    let source = event.currentTarget
-    console.log(source)
+function selectTower(event) {
+    if (modeSourceSelect) {
+        source = event.currentTarget
+        if (source.lastElementChild) {
+            sourceWidth = source.lastElementChild.clientWidth
+        }
+        modeSourceSelect = false
+    }
+    else {
+        destination = event.currentTarget
+        if (destination.lastElementChild) {
+            destinationWidth = destination.lastElementChild.clientWidth
+        }
+        moveDisc(sourceWidth, destinationWidth)
+        modeSourceSelect = true
+    }
 }
 
-post1.addEventListener('click', destination)
-post2.addEventListener('click', destination)
-post3.addEventListener('click', destination)
+function moveDisc(sWidth, dWidth) {
+    if (sourceWidth < destinationWidth || destinationWidth === 0) {
+        destination.appendChild(source.lastElementChild)
+        sourceWidth = 0
+        desitnationWidth = 0
+    }
+}
 
-function destination(event) {
-    let destination = event.currentTarget
+
+// win condition
+if (post3.childElementCount === 4) {
+
 }
