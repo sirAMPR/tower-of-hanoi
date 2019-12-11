@@ -55,17 +55,27 @@ function moveDisc(sWidth, dWidth) {
 }
 
 function isWinner() {
+    let newContainer = document.createElement("div")
+    newContainer.id = 'winContainer'
+    document.body.appendChild(newContainer)
+
     // add winner text to page
     let winDiv = document.createElement("div")
-    winDiv.style.alignContenT = ''
+    winDiv.style.alignContent = 'center'
     winDiv.textContent = 'YOU WIN'
-    document.body.appendChild(winDiv)
+    winDiv.id = 'winDiv'
+    newContainer.appendChild(winDiv)
 
+    //button container
+    let buttonContainer = document.createElement("div")
+    buttonContainer.id = 'buttonsContainer'
+    document.body.appendChild(buttonContainer)
 
     // add restart button
     let newButton = document.createElement("button")
     newButton.textContent = 'Restart'
-    document.body.appendChild(newButton)
+    buttonContainer.appendChild(newButton)
+    newContainer.appendChild(buttonContainer)
     newButton.id = 'winButton'
     newButton.addEventListener('click', restart)
 }

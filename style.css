@@ -70,7 +70,25 @@ body {
     margin-left: 200px;
     margin-right: 200px;
 }
+#winContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+#buttonsContainer {
+    display: flex;
+    justify-content: center;
+}
 
 #winButton {
+    font-size: 100px;
+    border-radius: 20px;
+    
+}
+
+#winDiv {
     font-size: 200px;
+    text-align: center;
+    color: red;
 }
